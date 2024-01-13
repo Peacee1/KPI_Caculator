@@ -10830,7 +10830,7 @@ function caculatorData() {
               <tr>
                   <td>${newp.Governor}</td>
                   <td>${newp.ID}</td>
-                  <td>over 60M</td>
+                  <td>under 35M</td>
                   <td>${dead}</td>
                   <td>${kills}</td>
               </tr>`;
