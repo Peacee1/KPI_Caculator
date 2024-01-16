@@ -10815,9 +10815,9 @@ function caculatorData() {
   const dead3 = document.querySelector("#Dead_KPI3").value;
   const kill3 = document.querySelector("#Kills_KPI3").value;
 
-  players2024.forEach((newp) => {
+  players2023.forEach((oldp) => {
     let a = 0;
-    players2023.forEach((oldp) => {
+    players2024.forEach((newp) => {
       if (newp.ID === oldp.ID) {
         a += 1;
         let dead = newp.Dead - oldp.Dead;
@@ -10854,7 +10854,7 @@ function caculatorData() {
               <tr>
                   <td>${newp.Governor}</td>
                   <td>${newp.ID}</td>
-                  <td>over 60M</td>
+                  <td>Over 60M</td>
                   <td>${dead}</td>
                   <td>${kills}</td>
               </tr>
@@ -10866,8 +10866,9 @@ function caculatorData() {
     if (a == 0) {
       container2.innerHTML += `
        <tr>
-         <td>${newp.Governor}</td>
-         <td>${newp.ID}</td>
+         <td>${oldp.Governor}</td>
+         <td>${oldp.ID}</td>
+         <td>${oldp.Power}</td>
        </tr>`;
     }
   });
