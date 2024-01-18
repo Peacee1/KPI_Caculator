@@ -10874,3 +10874,29 @@ function caculatorData() {
   });
 }
 document.querySelector("#Submit").addEventListener("click", caculatorData);
+document.querySelector("#Submitt").addEventListener("click", () => {
+  const Search = document.querySelector(".Search");
+  let a = 0;
+  players2023.forEach((oldp) => {
+    let ID = document.querySelector(".inputSearch").value;
+    if (ID == oldp.ID) {
+      players2024.forEach((newp) => {
+        if (newp.ID === oldp.ID) {
+          a += 1;
+          let dead = newp.Dead - oldp.Dead;
+          let T5kills = newp.T5Kills - oldp.T5Kills;
+          let T4kills = newp.T4Kills - oldp.T4Kills;
+          let T3kills = newp.T3Kills - oldp.T3Kills;
+          let T2kills = newp.T2Kills - oldp.T2Kills;
+          let T1kills = newp.T1Kills - oldp.T1Kills;
+
+          let kills = T5kills + T4kills;
+          Search.innerHTML += `${oldp.Governor}---Power:${newp.Power}----kills T1:${T1kills}----kills T2:${T2kills}----kills T3:${T3kills}----kills T4:${T4kills}---kills T5:${T5kills}---dead:${dead}`;
+        }
+      });
+    }
+  });
+  if (a == 0) {
+    Search.innerHTML += "Không tồn tại data của đối tượng";
+  }
+});
